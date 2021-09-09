@@ -1,0 +1,5 @@
+if(QNX)
+	set(yaml-cpp_INCLUDE_DIR	${ROS_EXTERNAL_DEPS_INSTALL}/usr/include/yaml-cpp)
+	set(yaml-cpp_LIB_DIR		${ROS_EXTERNAL_DEPS_INSTALL}/${CPUVARDIR}/usr/lib)
+	set(yaml-cpp_FOUND TRUE)
+endif()

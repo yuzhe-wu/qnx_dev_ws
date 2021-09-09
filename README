@@ -1,0 +1,42 @@
+Setting up a workspace for ROS2 Foxy for QNX:
+
+Preferable host OS: Ubuntu 20.04
+
+
+1- Clone the sample workspace:
+
+    git clone http://gitlab.com/qnx/ros2/dev_ws.git
+
+
+2- Add your packages inside dev_ws/src
+
+
+3- Run the build command:
+
+    ./build.sh
+
+
+4- On target create a new directory for your group of packages:
+
+  mkdir /opt/dev_ws
+
+
+5- Copy your packages over to the new location
+
+  scp -r ~/dev_ws/install/x86_64/* <user_name>@<ip_address>:/opt/dev_ws
+
+
+6- Add the following commands at the end of the file /etc/.profile on your target:
+
+    export COLCON_CURRENT_PREFIX=/opt/ros/foxy
+    . /opt/ros/foxy/local_setup.sh
+    export COLCON_CURRENT_PREFIX=/opt/dev_ws
+    . /opt/dev_ws/local_setup.sh   
+
+
+7- Log out and log in back into new a terminal
+
+
+8- Run your newly installed packages.
+
+    ros2 run my_new_package my_new_package_executable
