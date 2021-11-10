@@ -68,7 +68,7 @@ set(THREADS_PTHREAD_ARG "0" CACHE STRING "Result from TRY_RUN" FORCE)
 # extension files to be found.
 set(PYTHON_SOABI cpython-38)
 # Find host python then override the variables needed for cross-compiling with QNX cross compiled files.
-find_package(PythonInterp 3.5 REQUIRED)
+find_package(PythonInterp 3.8 REQUIRED)
 set(PYTHON_INCLUDE_DIR ${QNX_TARGET}/usr/include/${CPUVARDIR}/python3.8;${QNX_TARGET}/${CPUVARDIR}/usr/include/python3.8;${QNX_TARGET}/usr/include/python3.8;${QNX_TARGET}/${CPUVARDIR}/usr/lib/python3.8/site-packages/numpy/core/include;${ROS_EXTERNAL_DEPS_INSTALL}/${CPUVARDIR}/usr/lib/python3.8/site-packages/numpy/core/include)
 set(PYTHON_INCLUDE_DIRS ${PYTHON_INCLUDE_DIR})
 set(PYTHON_LIBRARY ${QNX_TARGET}/${CPUVARDIR}/usr/lib/libpython3.8.so)
