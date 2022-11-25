@@ -5,7 +5,7 @@ Preferable host OS: Ubuntu 20.04
 
 1- Clone the sample workspace:
 
-    git clone http://gitlab.com/qnx/ros2/dev_ws.git
+    git clone http://gitlab.com/qnx/frameworks/ros2/dev_ws.git
 
 
 2- Add your packages inside dev_ws/src
