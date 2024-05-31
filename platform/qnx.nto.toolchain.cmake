@@ -66,15 +66,15 @@ set(THREADS_PTHREAD_ARG "0" CACHE STRING "Result from TRY_RUN" FORCE)
 # the variable below has to be set according to the output of
 # sysconfig.get_config_var('SOABI') on the target, which allows python
 # extension files to be found.
-set(PYTHON_SOABI cpython-38)
+set(PYTHON_SOABI cpython-311)
 # Find host python then override the variables needed for cross-compiling with QNX cross compiled files.
-find_package(PythonInterp 3.8 REQUIRED)
-set(PYTHON_INCLUDE_DIR ${QNX_TARGET}/usr/include/${CPUVARDIR}/python3.8;${QNX_TARGET}/${CPUVARDIR}/usr/include/python3.8;${QNX_TARGET}/usr/include/python3.8;${QNX_TARGET}/${CPUVARDIR}/usr/lib/python3.8/site-packages/numpy/core/include;${ROS_EXTERNAL_DEPS_INSTALL}/${CPUVARDIR}/usr/lib/python3.8/site-packages/numpy/core/include)
+find_package(PythonInterp 3.11 REQUIRED)
+set(PYTHON_INCLUDE_DIR ${QNX_TARGET}/usr/include/${CPUVARDIR}/python3.11;${QNX_TARGET}/${CPUVARDIR}/usr/include/python3.11;${QNX_TARGET}/usr/include/python3.11;${QNX_TARGET}/${CPUVARDIR}/usr/lib/python3.11/site-packages/numpy/core/include;${ROS_EXTERNAL_DEPS_INSTALL}/${CPUVARDIR}/usr/lib/python3.11/site-packages/numpy/core/include)
 set(PYTHON_INCLUDE_DIRS ${PYTHON_INCLUDE_DIR})
-set(PYTHON_LIBRARY ${QNX_TARGET}/${CPUVARDIR}/usr/lib/libpython3.8.so)
+set(PYTHON_LIBRARY ${QNX_TARGET}/${CPUVARDIR}/usr/lib/libpython3.11.so)
 set(PYTHON_LIBRARIES ${PYTHON_LIBRARY})
 set(PYTHONLIBS_FOUND)
-set(PYTHON_MODULE_EXTENSION .cpython-38.so)
+set(PYTHON_MODULE_EXTENSION .cpython-311.so)
 set(PYTHON_IS_DEBUG FALSE)
 
 #

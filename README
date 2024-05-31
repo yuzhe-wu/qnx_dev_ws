@@ -1,4 +1,4 @@
-Setting up a workspace for ROS2 Foxy for QNX:
+Setting up a workspace for ROS2 Humble for QNX:
 
 Preferable host OS: Ubuntu 20.04
 
@@ -28,8 +28,8 @@ Preferable host OS: Ubuntu 20.04
 
 6- Add the following commands at the end of the file /etc/.profile on your target:
 
-    export COLCON_CURRENT_PREFIX=/opt/ros/foxy
-    . /opt/ros/foxy/local_setup.sh
+    export COLCON_CURRENT_PREFIX=/opt/ros/humble
+    . /opt/ros/humble/local_setup.sh
     export COLCON_CURRENT_PREFIX=/opt/dev_ws
     . /opt/dev_ws/local_setup.sh   
 
