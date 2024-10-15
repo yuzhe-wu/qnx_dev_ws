@@ -1,0 +1,8 @@
+export LD_LIBRARY_PATH=/opt/rti_connext_dds-7.3.0/lib/armv8QNX7.1qcc_gpp8.3.0:/opt/ros/humble/lib:/opt/lib:$LD_LIBRARY_PATH
+export ROS_LOG_DIR=/opt/log/ros
+
+
+RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+RMW_IMPLEMENTATION=rmw_connextdds
+

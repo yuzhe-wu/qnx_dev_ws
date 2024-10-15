@@ -769,7 +769,7 @@ endif()
 # RTI Connext DDS core libraries, which are always part of an installation.
 list(APPEND rti_versions_field_names_host
     "header_files"
-    "host_files"
+    # "host_files"
     "core_release_docs"
     "core_api_docs"
     "core_jars")
