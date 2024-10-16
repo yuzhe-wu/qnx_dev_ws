@@ -72,11 +72,13 @@ for arch in aarch64; do
             -DCMAKE_TOOLCHAIN_FILE="$PWD/platform/qnx.nto.toolchain.cmake" \
 	    -DBUILD_TESTING:BOOL="OFF" \
             -DCMAKE_BUILD_TYPE="Release" \
+            -DCMAKE_VERBOSE_MAKEFILE=ON \
             -DCMAKE_MODULE_PATH=$CMAKE_MODULE_PATH \
             -DROS2_HOST_INSTALLATION_PATH=$ROS2_HOST_INSTALLATION_PATH \
             -DNUMPY_HEADERS=${NUMPY_HEADERS} \
 	    -DROS_EXTERNAL_DEPS_INSTALL=${QNX_TARGET} \
-            -Wno-dev --no-warn-unused-cli
+            -Wno-dev --no-warn-unused-cli \
+            --packages-ignore rclcpp_dds_examples
 
     rc=$?
     if [ $rc -eq 0 ]; then

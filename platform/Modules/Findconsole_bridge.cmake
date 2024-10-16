@@ -1,7 +1,12 @@
-set(console_bridge_INCLUDE_PATH PATHS "${ROS_EXTERNAL_DEPS_INSTALL}/usr/include" NO_DEFAULT_PATH)
-set(console_bridge_LIBRARY_PATH PATHS "${ROS_EXTERNAL_DEPS_INSTALL}/${CPUVARDIR}/usr/lib" NO_DEFAULT_PATH)
-find_path(console_bridge_INCLUDE_DIR NAMES console.h PATH_SUFFIXES "console_bridge" ${console_bridge_INCLUDE_PATH})
-find_library(console_bridge_LIBRARY  NAMES console_bridge ${console_bridge_LIBRARY_PATH})
+# Update console_bridge_INCLUDE_PATH
+set(console_bridge_INCLUDE_PATH "/home/wayve/qnx710/target/qnx7/aarch64le/opt/ros/humble/include/console_bridge_vendor/console_bridge")
+set(console_bridge_LIBRARY_PATH "/home/wayve/qnx710/target/qnx7/aarch64le/opt/ros/humble/lib")
+
+find_path(console_bridge_INCLUDE_DIR NAMES console.h HINTS ${console_bridge_INCLUDE_PATH} NO_DEFAULT_PATH)
+find_library(console_bridge_LIBRARY NAMES console_bridge HINTS ${console_bridge_LIBRARY_PATH} NO_DEFAULT_PATH)
+
+# find_path(console_bridge_INCLUDE_DIR NAMES console.h PATH_SUFFIXES "console_bridge" ${console_bridge_INCLUDE_PATH})
+# find_library(console_bridge_LIBRARY  NAMES console_bridge ${console_bridge_LIBRARY_PATH})
 if(console_bridge_INCLUDE_DIR)
   if (console_bridge_LIBRARY)
     set(console_bridge_FOUND 1)

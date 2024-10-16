@@ -1,0 +1,17 @@
+module rti_eval {
+  // Shared memory backend can only deal with fixed size messages.
+  // 33177600 = 3840x2160x4 (largest encoding has 4 channels per pixel)   
+  const int32 MAX_DATA_SIZE = 33177600;
+  
+  @final
+  @transfer_mode(SHMEM_REF)
+  // Use XCDR2 format so that plain DataWriters can communicate with
+  // flat-data DataReaders, which only support XCDR2
+  @allowed_data_representation(XCDR2)
+  struct Chatter {
+    uint64 timestamp;
+    uint64 count;
+    octet data[MAX_DATA_SIZE];
+    uint64 data_length;
+  };
+};
